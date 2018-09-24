@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "com.faysselyabahddou.codingchallengehiddenfounders"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        buildConfigField "String", "BASEURL", "\"https://api.github.com/\""
+        buildConfigField "String", "AVATAR", "\"https://avatars1.githubusercontent.com/u/\""
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
+
+    // Material Design
+    implementation "com.android.support:design:$supportLibraryVersion"
+    //RecyclerView Library
+    implementation "com.android.support:recyclerview-v7:$supportLibraryVersion"
+    //CardView Library
+    implementation "com.android.support:cardview-v7:$supportLibraryVersion"
+
+    //Retrofit2
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava:$rxjavaRetrofitAdapterVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttpLoggingVersion"
+
+    //Glide for image loading
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
+    // loading
+    implementation "com.wang.avi:library:$aviLibraryVersion"
+
+    // Dagger2
+    annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+    implementation "com.google.dagger:dagger:$daggerVersion"
+
+    //rxJava and rxAndroid
+    implementation "io.reactivex:rxjava:$rxjavaVersion"
+    implementation "io.reactivex:rxandroid:$rxandroidVersion"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
