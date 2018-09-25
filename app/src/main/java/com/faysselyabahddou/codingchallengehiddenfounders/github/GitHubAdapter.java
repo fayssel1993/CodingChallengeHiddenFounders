@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.faysselyabahddou.codingchallengehiddenfounders.BuildConfig;
 import com.faysselyabahddou.codingchallengehiddenfounders.R;
 import com.faysselyabahddou.codingchallengehiddenfounders.model.Owner;
 import com.faysselyabahddou.codingchallengehiddenfounders.model.Repo;
@@ -24,7 +23,7 @@ public class GitHubAdapter extends RecyclerView.Adapter<GitHubAdapter.GitHubView
     private ArrayList<Repo> repos;
     private Context context;
 
-    public GitHubAdapter(ArrayList<Repo> repos, Context context) {
+    GitHubAdapter(ArrayList<Repo> repos, Context context) {
         this.repos = repos;
         this.context = context;
     }
@@ -50,7 +49,7 @@ public class GitHubAdapter extends RecyclerView.Adapter<GitHubAdapter.GitHubView
 
         Glide
                 .with(context)
-                .load(BuildConfig.AVATAR + owner.getId())
+                .load(owner.getAvatarUrl())
                 .into(gitHubViewHolder.repoOwnerAvatar);
     }
 

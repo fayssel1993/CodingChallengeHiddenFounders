@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements GitHubContract.Vi
     private ArrayList<Repo> repos;
     private ProgressBar loadMore;
     private PopUpMessage popUpMessage;
-
     private boolean mEnablePagination = true;
     private boolean mIsLoading;
 
@@ -78,8 +77,6 @@ public class MainActivity extends AppCompatActivity implements GitHubContract.Vi
 
     @Override
     public void onResponseReceived(List<Repo> response) {
-
-
         if (mIsLoading) {
             mIsLoading = false;
             loadMore.setVisibility(View.GONE);

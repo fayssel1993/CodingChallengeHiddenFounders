@@ -9,7 +9,6 @@ android {
         versionCode 1
         versionName "1.0"
         buildConfigField "String", "BASEURL", "\"https://api.github.com/\""
-        buildConfigField "String", "AVATAR", "\"https://avatars1.githubusercontent.com/u/\""
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

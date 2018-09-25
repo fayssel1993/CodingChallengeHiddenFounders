@@ -2,6 +2,7 @@ package com.faysselyabahddou.codingchallengehiddenfounders.github;
 
 import android.app.Application;
 
+import com.faysselyabahddou.codingchallengehiddenfounders.R;
 import com.faysselyabahddou.codingchallengehiddenfounders.app.ServiceCreator;
 import com.faysselyabahddou.codingchallengehiddenfounders.model.GitHubResponse;
 import com.faysselyabahddou.codingchallengehiddenfounders.model.Repo;
@@ -47,6 +48,8 @@ public class GitHubPresenter implements GitHubContract.Presenter {
 
                     @Override
                     public void onError(Throwable e) {
+
+                        view.onError(application.getResources().getString(R.string.text_error), application.getResources().getString(R.string.text_error_message_app));
 
                     }
 

@@ -31,10 +31,11 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginStart="10dp"
+        android:background="@color/colorAccent"
         android:gravity="center"
         android:padding="4dp"
-        android:background="@color/colorAccent"
-        android:text="@string/btn_ok" />
+        android:text="@string/btn_ok"
+        android:textAllCaps="true" />
 
 
 </LinearLayout>
